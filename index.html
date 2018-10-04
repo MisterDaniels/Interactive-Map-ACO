@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Assassin's Creed Odyssey</title>
+	<meta name="description" content="Conheça um pouco da cultura da Grécia com o mapa interativo de Assassin's Creed Odyssey!">
+	<link rel="stylesheet" href="C:/temp/css/styles.css">
+	<link rel="icon" href="favicon.png">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body class="default">
+
+	<div class="div-back">
+		
+		<div class="div-map">
+			<div class="bottom-page-logo">
+				<a href="https://assassinscreed.ubisoft.com">
+					<img id="logo" src="img/logo.png" alt="Assassin's Creed Odyssey">
+				</a>
+			</div>
+			<div class="map-marker makedonia">
+				<img id="makedonia" src="img/map-marker.svg" class="region-marker">
+				<h3>Makedonia</h3>
+			</div>
+			<img src="img/map.jpg" alt="Mapa Assassin's Creed Odyssey">
+			<div id="close-detail-back" class="marker-detail-back"></div>
+			<div id="makedonia-detail" class="marker-detail-frame close-detail">
+				<a href="#" class="btn-marker-detail-close">
+					<img src="img/btn-close.png" alt="Close">
+				</a>
+				<div class="marker-detail-frame-img" style="background-image: url(C:/temp/img/makedonia-img.jpg);"></div>
+				<div class="marker-detail-frame-flag" style="background-image: url(C:/temp/img/makedonia-flag.png);"></div>
+			</div>
+		</div>
+
+	</div>
+	
+	<script type="text/javascript">
+		$('.region-marker').click(function(event) {
+			document.getElementById(event.target.id + '-detail').setAttribute('class', 'marker-detail-frame open-detail');
+			document.getElementById('close-detail-back').setAttribute('class', 'marker-detail-back opened');
+		});
+		$('.btn-marker-detail-close').click(function(event) {
+			var list = document.getElementsByClassName('marker-detail-frame open-detail');
+			for (index = 0; index < list.length; index++){
+				list[index].setAttribute('class', 'marker-detail-frame close-detail');
+			}
+			document.getElementById('close-detail-back').setAttribute('class', 'marker-detail-back');
+		});
+		$('.marker-detail-back').click(function(event) {
+			var list = document.getElementsByClassName('marker-detail-frame open-detail');
+			for (index = 0; index < list.length; index++){
+				list[index].setAttribute('class', 'marker-detail-frame close-detail');
+			}
+			document.getElementById('close-detail-back').setAttribute('class', 'marker-detail-back');
+		});
+	</script>
+	
+</body>
+</html>
